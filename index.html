@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentRise</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="user-info">
+                <i class="fas fa-user-circle" style="font-size: 32px;"></i>
+                <i class="fas fa-cog"></i>
+            </div>
+            <div class="tab-navigation-container">
+                
+                <div class="tab-navigation">
+                    <button id="followersBtn" class="tab-btn active"><i class="fas fa-users"></i><span>Followers</span></button>
+                    <button id="followingBtn" class="tab-btn"><i class="fas fa-user-plus"></i><span>Following</span></button>
+                    <button id="CustomUsersBtn" class="tab-btn"><i class="fas fa-list"></i><span>Custom List</span></button>
+                    <button id="hashtagsBtn" class="tab-btn"><i class="fas fa-hashtag"></i><span>Scrape By Hashtags</span></button>
+                    <button id="commentatorsBtn" class="tab-btn"><i class="fas fa-comments"></i><span>Scrape Commentators</span></button>
+                    <button id="likersBtn" class="tab-btn"><i class="fas fa-heart"></i><span>Scrape Likers</span></button>
+                    <!-- Add more options here as needed -->
+                </div>
+                <div class="scroll-indicator left"><i class="fas fa-chevron-left"></i></div>
+                <div class="scroll-indicator right"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </header>
+
+        <!-- Rest of the HTML remains unchanged -->
+
+        <main>
+            <div class="profile-actions">
+                <h2>Profile Actions</h2>
+                <div class="input-with-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Username">
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn toggle-btn" data-action="dm"><i class="fas fa-paper-plane"></i> DM</button>
+                    <button class="action-btn toggle-btn" data-action="comment"><i class="fas fa-comment"></i> Comment</button>
+                    <button class="action-btn toggle-btn" data-action="follow"><i class="fas fa-user-plus"></i> Follow</button>
+                </div>
+            </div>
+
+            <div class="timers">
+                <h2>Timers</h2>
+                <div class="setting-item">
+                    <label for="maxUsers">Limit Max users: <span id="maxUsersValue">0</span></label>
+                    <input type="range" id="maxUsers" min="1" max="50" value="0">
+                </div>
+
+                <div class="setting-item">
+                    <label for="intervalRange">Delay Between Actions: <span id="intervalRangeValue">3 - 5</span> minutes</label>
+                    <input type="range" id="intervalRange" min="1" max="58" value="0">
+                </div>
+
+                <div class="inline-inputs">
+                    <div>
+                        <label for="pauseEvery">Pause every</label>
+                        <input type="number" id="pauseEvery" min="1" value="10">
+                        <span>actions</span>
+                    </div>
+                    <div>
+                        <label for="waitFor">Wait for</label>
+                        <input type="number" id="waitFor" min="1" value="10">
+                        <span>minutes</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <button id="startBtn" class="primary-btn">Start</button>
+        </footer>
+    </div>
+
+    <!-- DM Modal Popup for Uploading Script -->
+    <div id="dmModal" class="dm-modal">
+        <div class="dm-modal-content">
+            <div class="dm-modal-header">
+                <h2>DM Script</h2>
+                <!-- New Toggle Switch positioned to the top-right -->
+                <label class="switch">
+                    <input type="checkbox" id="dmToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <textarea id="dmScript" placeholder="Enter your DM script here..."></textarea>
+            <div class="dm-modal-actions">
+                <button id="generateDmScript" class="action-btn"><i class="fas fa-bolt"></i> AI Generate</button>
+                <button id="saveDmScript" class="action-btn"><i class="fas fa-save"></i> Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
